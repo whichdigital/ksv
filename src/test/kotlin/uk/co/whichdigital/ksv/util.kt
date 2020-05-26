@@ -4,7 +4,7 @@ fun String.toCsvSourceConfig(
     commaChar: Char = ',',
     quoteChar: Char = '"',
     fixLine: StringModifier = ::removeBomChars,
-    keepCsvRecord: (CsvRecord) -> Boolean = keepAll,
+    keepCsvRecord: RecordPredicate = keepAll,
     normalizeColumnName: StringModifier = ::toLowerCaseAndRemoveSpaceAndQuotes
 ) = CsvSourceConfig(
     stream = this.byteInputStream(),

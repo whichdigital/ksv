@@ -13,7 +13,7 @@ data class CsvSourceConfig (
     private val commaChar: Char = ',',
     private val quoteChar: Char = '"',
     val fixLine: StringModifier = ::removeBomChars,
-    val keepCsvRecord: (CsvRecord) -> Boolean = keepAll,
+    val keepCsvRecord: (CsvHeader, CsvRecord) -> Boolean = keepAll,
     private val normalizeColumnName: StringModifier = ::toLowerCaseAndRemoveSpaceAndQuotes
 ) {
     val splitByComma: LineSplitter = createLineSplitter(commaChar, quoteChar)
@@ -25,8 +25,8 @@ fun CsvSourceConfig.bufferedReader() = stream.bufferedReader(charset)
 internal fun toLowerCaseAndRemoveSpaceAndQuotes(s: String) = s.toLowerCase().removeSpace()
 // removing the possible UTF-8 BOM character at the start of each line
 internal fun removeBomChars(s: String) = s.trimStart('\uFEFF', '\u200B')
-internal val keepAll: RecordPredicate = {true}
+internal val keepAll: RecordPredicate = { _, _ -> true }
 
-typealias RecordPredicate = (CsvRecord) -> Boolean
+typealias RecordPredicate = (CsvHeader, CsvRecord) -> Boolean
 typealias LineSplitter = String.() -> List<String>
 typealias StringModifier = (String) -> String

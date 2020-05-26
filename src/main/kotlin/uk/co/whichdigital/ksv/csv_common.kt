@@ -24,7 +24,7 @@ inline fun <reified T : Any> csv2List(
                 is ProtoCsvRecord.Failure -> ParsedCsvLine.InvalidLineError(protoRecord.line, protoRecord.msg)
                 is ProtoCsvRecord.Success -> {
                     val record = protoRecord.record
-                    if(!sourceConfig.keepCsvRecord(record)) {
+                    if(!sourceConfig.keepCsvRecord(header, record)) {
                         ParsedCsvLine.RejectedRecord(record.toString())
                     } else {
                         when (val record2dataResult = record2Item(header, record, itemFactory)) {
