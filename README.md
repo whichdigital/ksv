@@ -13,7 +13,7 @@ Because this library is written in Kotlin, you can define the **nullability** of
     val addressLine1: String,                              // without annotation it's assumed the the column name is the the property name
     val city: String = "London",                           // without value in the csv file the Kotlin default value is used
     @CsvTimestamp(name = "latest check", format = "yyyy/MM/dd|dd/MM/yyyy")  
-    val latestCheckDate: LocalDate?,                       // multiple formats can be provided seperated by '|'
+    val latestCheckDate: LocalDate?,                       // multiple formats can be provided separated by '|'
     @CsvGeneric(name = "offers Cola, Sprite or Fanta", converterName = "beverageBoolean")
     val refreshments: Boolean?                             // a user-defined converter can be used
 )
