@@ -66,7 +66,7 @@ annotation parameter:
 for **LocalDate** and **LocalDateTime**.
 
 annotation parameter:
-* name (optional): the name of the column this property is instanciated from. If no name is provided, the name of the annotated property is used.
+* name (optional): the name of the column this property is instantiated from. If no name is provided, the name of the annotated property is used.
 * format: format is either a single timestamp pattern (e.g. "yyyy/MM/dd" ) or multiple patterns separated by '|' (e.g. "yyyy/MM/dd|dd-MM-yyyy" )
 
 #### @CsvGeneric
@@ -81,7 +81,7 @@ fun <T: Any> registerGenericConverter(
 where `T` is the type of the property.
 
 annotation parameter:
-* name (optional): the name of the column this property is instanciated from. If no name is provided, the name of the annotated property is used.
+* name (optional): the name of the column this property is instantiated from. If no name is provided, the name of the annotated property is used.
 * converterName: has to match the name of a registered converter. The return type of the converter has to match the type of the annotated property.
 
 ## Code
