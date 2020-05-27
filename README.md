@@ -1,7 +1,7 @@
 # KSV - reflective mapping of comma separated values to user-defined ones for Kotlin
 
 You only have to annotate a data class with `@CsvRow` and it’s properties with either 
-`@CscValue` (for Strings, Ints, Doubles and Booleans), `CsvTimestamp` (for LocalDate and LocalDateTime) or `@CsvGeneric` (for user-defined mappings).
+`@CsvValue` (for Strings, Ints, Doubles and Booleans), `CsvTimestamp` (for LocalDate and LocalDateTime) or `@CsvGeneric` (for user-defined mappings).
 Because this library is written in Kotlin, you can define the **nullability** of properties.
 (A blank value in the csv results in a null value of the property,
  at least as the property doesn't have a default value.)
