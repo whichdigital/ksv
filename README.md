@@ -60,7 +60,7 @@ Booleans are mapped from a String value by comparing the lowercase version to
 "true", "yes", "y" and "1", which are mapped to true, otherwise false.
 
 annotation parameter:
-* name (optional): the name of the column this property is instanciated from. If no name is provided, the name of the annotated property is used.
+* name (optional): the name of the column this property is instantiated from. If no name is provided, the name of the annotated property is used.
 
 #### @CsvTimestamp
 for **LocalDate** and **LocalDateTime**.
