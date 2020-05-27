@@ -127,14 +127,14 @@ val dataRows: List<DataRow> = csv2List(
 ```
 
 #### CsvSourceConfig
-Assuming the InputStream uses UTF8 the instanciation of a `CsvSourceConfig` only needs said InputStream.
+Assuming the InputStream uses UTF8 the instantiation of a `CsvSourceConfig` only needs said InputStream.
 But there are more configuration options:
 * stream: InputStream: the source of the csv
 * charset: Charset: the default is UTF8
 * commaChar: Char: the default is a normal comma (',') but csv files are known to sometimes use other characters (e.g. a semicolon) as a delimiter
 * quoteChar: Char: the default is a double quote, but char (e.g. single quote) can be used
 * fixLine: (String)->String: this function is used on every line of the csv file. The idea is to remove e.g. illegal characters. The default removes invisible BOM characters (`\uFEFF` and `\u200B`) from the start of the line.
-* keepCsvRecord: (CsvRecord) -> Boolean: The csv input stream can be extremely large. Sometimes we want to filter out rows from the csv before an object is instanciated. (in our exemple this would be of type `DataRow`)
+* keepCsvRecord: (CsvRecord) -> Boolean: The csv input stream can be extremely large. Sometimes we want to filter out rows from the csv before an object is instantiated. (in our example this would be of type `DataRow`)
 * normalizeColumnName: (String)->String: if we don't control the source of the csv data (e.g. because the files come from an external source),
  it often happens the column names change slightly between different versions. the `normalizeColumnName`-parameter is supposed to make
  a configuration more robust against such changes. The default version removes all spaces from the column names an maps them to their lower case version.
