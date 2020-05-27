@@ -53,7 +53,7 @@ Boolean conversion
 
 All values are trimmed and stripped of surrounding quotes (default quote is double quote).
 
-#### @CscValue
+#### @CsvValue
 for mapping values to **String**, **Int**, **Double** or **Boolean**.
  
 Booleans are mapped from a String value by comparing the lowercase version to
