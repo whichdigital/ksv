@@ -5,8 +5,8 @@ plugins {
 }
 
 group = "uk.co.whichdigital.ksv"
-version = "1.0.0-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_11
+version = "1.0.0"  //-SNAPSHOT
+java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
     mavenCentral()

@@ -40,6 +40,24 @@ val dataRows: List<DataRow> = csv2List(
 ```
 This code is actually executed in the testclass [TestExample](https://github.com/whichdigital/ksv/blob/master/src/test/kotlin/uk/co/whichdigital/ksv/test_example.kt).
 
+## How to Import this Lib into your (Kotlin) Gradle -project
+
+via a source dependency!
+
+First add this git-repository to your projects **settings.gradle.kts** file:
+```kotlin
+sourceControl {
+    gitRepository(java.net.URI.create("https://github.com/whichdigital/ksv.git")) {
+        producesModule("uk.co.whichdigital.ksv:ksv")
+    }
+}
+```
+then add this dependency (in its latest git-tagged version) to your **build.gradle.kts** file:
+```kotlin
+implementation("uk.co.whichdigital.ksv:ksv:1.0.0")
+``` 
+Done.
+
 ## Annotations
 
 ### class annotation(s)
