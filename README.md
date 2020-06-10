@@ -1,10 +1,15 @@
-# KSV - reflective mapping of comma separated values to user-defined ones for Kotlin
+# KSV - robust mapping of comma separated values to user-defined data classes for Kotlin on the JVM
+
+The robustness stems from columns being identified by (normalized) column name instead of the column index,
+which makes this solution work seamlessly in situations in which columns have been swapped or new columns have been inserted.
+The names of column might even have changed slightly. (The default name normalization removes lower/uppercase differences as well as spaces.)
+This property is very useful if the source of the csv-file(s) is not within your organization and you can't enforce a certain format 
+(, e.g. if you regularly import csv-files from government sites). 
 
 You only have to annotate a data class with `@CsvRow` and it’s properties with either 
 `@CsvValue` (for Strings, Ints, Doubles and Booleans), `CsvTimestamp` (for LocalDate and LocalDateTime) or `@CsvGeneric` (for user-defined mappings).
-Because this library is written in Kotlin, you can define the **nullability** of properties.
-(A blank value in the csv results in a null value of the property,
- at least as the property doesn't have a default value.)
+Because this library is written in Kotlin, you can define the **nullability** of properties. A blank value in the csv results in a null value of the property
+ (assuming the property doesn't have a default value).
 
 ```kotlin
 @CsvRow data class DataRow(
